@@ -27,7 +27,7 @@ public class Enemy : MonoBehaviour
             this.gameObject.SetActive(false);
         }
     }
-
+    /*
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.transform.tag == "phaseCast")
@@ -47,14 +47,14 @@ public class Enemy : MonoBehaviour
             StartCoroutine(EffectDamage());
         }
     }
-
+    */
     private IEnumerator EffectDamage()
     {
         yield return new WaitForSeconds(3f);
 
         do
         {
-            hitPoints -= actionSkill.damage;
+            //hitPoints -= actionSkill.damage;
         } while (effectStatus == true);
 
         
