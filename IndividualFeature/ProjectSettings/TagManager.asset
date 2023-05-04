@@ -6,6 +6,8 @@ TagManager:
   tags:
   - bullet
   - wall
+  - phaseCast
+  - phaseSphere
   layers:
   - Default
   - TransparentFX

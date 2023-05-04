@@ -8,16 +8,15 @@ public class Player : MonoBehaviour
 
     private float speed = 10f;
     private float rotateSpeed = 25f;
-    //public bool activated;
+    
 
     //[SerializeField]
     //private GameObject bullet;
+
     //[SerializeField]
-    //private GameObject PhaseCast;
+    //private Vector3 offset;
     [SerializeField]
-    private Vector3 offset;
-    [SerializeField]
-    private ActiveActionSkill activeActionSkill;
+    private ActionSkillsBase actionSkillsBase;
 
     private void Awake()
     {
@@ -39,7 +38,7 @@ public class Player : MonoBehaviour
     
     public void PhasecastActive()
     {
-        activeActionSkill.PhasecastActive();
+        actionSkillsBase.PhasecastActive();
     }
 
     /*

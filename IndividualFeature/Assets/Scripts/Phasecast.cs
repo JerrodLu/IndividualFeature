@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Phasecast : ActionSkillsBase
+public class Phasecast : MonoBehaviour
 {
     private float speed = 3f;
     Vector3 moveDir = Vector3.forward;

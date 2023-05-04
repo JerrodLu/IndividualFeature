@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private int hitPoints = 500;
     private bool effectStatus;
-
+    [SerializeField]
     private ActionSkillsBase actionSkill;
 
     private void Start()
@@ -22,18 +22,23 @@ public class Enemy : MonoBehaviour
             StopCoroutine(EffectDamage());
         }
 
-        if (hitPoints == 0)
+        if (hitPoints <= 0)
         {
             this.gameObject.SetActive(false);
         }
     }
-    /*
+    
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.transform.tag == "phaseCast")
         {
-            hitPoints -= actionSkill.damage;
+            actionSkill.PhaseSphere();
             Destroy(collision.gameObject);
+        }
+
+        if (collision.transform.tag == "phaseSphere")
+        {
+            hitPoints -= actionSkill.damage;
         }
 
         if (collision.transform.tag == "FOM")
@@ -47,14 +52,14 @@ public class Enemy : MonoBehaviour
             StartCoroutine(EffectDamage());
         }
     }
-    */
+    
     private IEnumerator EffectDamage()
     {
         yield return new WaitForSeconds(3f);
 
         do
         {
-            //hitPoints -= actionSkill.damage;
+            hitPoints -= actionSkill.damage;
         } while (effectStatus == true);
 
         
