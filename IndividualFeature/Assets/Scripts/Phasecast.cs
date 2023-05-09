@@ -5,7 +5,7 @@ using UnityEngine;
 public class Phasecast : MonoBehaviour
 {
     private float speed = 3f;
-    Vector3 moveDir = Vector3.forward;
+    private Vector3 moveDir = Vector3.forward;
 
     private void Start()
     {
@@ -26,8 +26,6 @@ public class Phasecast : MonoBehaviour
     private IEnumerator Duration()
     {
         yield return new WaitForSeconds(5f);
-
-        Debug.Log("Why the llnoolnb vodn");
         Destroy(this.gameObject);
     }
 }

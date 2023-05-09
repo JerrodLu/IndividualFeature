@@ -6,8 +6,6 @@ public class ActionSkillsBase : MonoBehaviour
 {
     
     protected float cooldown = 10f;
-    public int damage;
-    protected float distance;
     public bool activated;
     private bool tempCD;
 
@@ -19,9 +17,6 @@ public class ActionSkillsBase : MonoBehaviour
     private GameObject phaseSphere;
     [SerializeField]
     private Vector3 offset;
-    
-    // for testing
-    //Vector3 temp;
 
     private void Start()
     {
@@ -32,10 +27,6 @@ public class ActionSkillsBase : MonoBehaviour
     // FixedUpdate did not work
     private void Update()
     {
-        //Debug.Log(temp);
-        //temp = PhaseCast.transform.position;
-        
-
         PhaseCast.transform.position = player.transform.position + offset;
     }
 
@@ -61,9 +52,5 @@ public class ActionSkillsBase : MonoBehaviour
     {
         GameObject sphere = Instantiate(phaseSphere);
         sphere.name = "PhaseSphere";
-        //sphere.transform.position = PhaseCast.transform.position;
-        //Debug.Log(sphere.transform.position);
-        //Debug.Log(PhaseCast.transform.position);
-        //Debug.Log(temp);
     }
 }

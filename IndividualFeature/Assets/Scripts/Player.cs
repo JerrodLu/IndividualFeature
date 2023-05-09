@@ -8,13 +8,7 @@ public class Player : MonoBehaviour
 
     private float speed = 10f;
     private float rotateSpeed = 25f;
-    
 
-    //[SerializeField]
-    //private GameObject bullet;
-
-    //[SerializeField]
-    //private Vector3 offset;
     [SerializeField]
     private ActionSkillsBase actionSkillsBase;
 
@@ -23,7 +17,6 @@ public class Player : MonoBehaviour
         playerInputActions = new PlayerInputActions();
         playerInputActions.Enable();
 
-        //playerInputActions.Player.FireBullet.performed += _ => Shoot();
         playerInputActions.Player.ActionSkillPhasecast.performed += _ => PhasecastActive();
     }
 
@@ -40,13 +33,4 @@ public class Player : MonoBehaviour
     {
         actionSkillsBase.PhasecastActive();
     }
-
-    /*
-    private void Shoot()
-    {
-        GameObject Bullet = Instantiate(bullet);
-        Bullet.name = "bullet";
-        Bullet.GetComponent<MeshRenderer>().material.color = Color.black;
-    }
-    */
 }

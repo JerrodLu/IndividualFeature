@@ -108,3 +108,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90b4c2f4b82030e4a8a63c229f8e6371, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 50
+  enemy: {fileID: 2958661268664308529, guid: 29b6da15c06b54d4184cc04fdbdf38d9, type: 3}
+  offset: {x: 0, y: 0.5, z: -1}

@@ -9,6 +9,8 @@ public class Enemy : MonoBehaviour
     private bool effectStatus;
     [SerializeField]
     private ActionSkillsBase actionSkill;
+    [SerializeField]
+    private Phasesphere phasesphere;
 
     private void Start()
     {
@@ -38,12 +40,12 @@ public class Enemy : MonoBehaviour
 
         if (collision.transform.tag == "phaseSphere")
         {
-            hitPoints -= actionSkill.damage;
+            hitPoints -= phasesphere.damage;
         }
 
         if (collision.transform.tag == "FOM")
         {
-            hitPoints -= actionSkill.damage;
+            //hitPoints -= actionSkill.damage;
         }
 
         if (collision.transform.tag == "fracture")
@@ -59,7 +61,7 @@ public class Enemy : MonoBehaviour
 
         do
         {
-            hitPoints -= actionSkill.damage;
+            //hitPoints -= actionSkill.damage;
         } while (effectStatus == true);
 
         

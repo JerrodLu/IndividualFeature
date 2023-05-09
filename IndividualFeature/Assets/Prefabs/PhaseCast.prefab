@@ -199,9 +199,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6592169022598084664}
-  - component: {fileID: -340828528406834093}
   - component: {fileID: 51413757393276660}
   - component: {fileID: 2023058257894171308}
+  - component: {fileID: -3226895654437902110}
   m_Layer: 0
   m_Name: PhaseCast
   m_TagString: phaseCast
@@ -229,24 +229,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-340828528406834093
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 512539119965358623}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c792279dc688884492af9407a9e7d05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 20
-  activated: 0
-  player: {fileID: 0}
-  PhaseCast: {fileID: 512539119965358623}
-  phaseSphere: {fileID: 0}
-  offset: {x: 0, y: 0, z: 0}
 --- !u!65 &51413757393276660
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -276,6 +258,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 124
   m_CollisionDetection: 0
+--- !u!114 &-3226895654437902110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 512539119965358623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c792279dc688884492af9407a9e7d05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1044226136540504378
 GameObject:
   m_ObjectHideFlags: 0

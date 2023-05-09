@@ -4,27 +4,26 @@ using UnityEngine;
 
 public class Phasesphere : MonoBehaviour
 {
-    // add Time.deltaTime to make the sphere larger
-    // this can be done in update
     private Vector3 rescale;
+    public int damage = 50;
+
+    [SerializeField]
+    private GameObject enemy;
+    [SerializeField]
+    private Vector3 offset;
 
     private void Start()
     {
-        rescale = new Vector3(2, 2, 2);
-        StartCoroutine(Rescale());
+        rescale = new Vector3(.05f, .05f, .05f);
+        transform.position = enemy.transform.position + offset;
     }
 
-    private IEnumerator Rescale()
+    private void FixedUpdate()
     {
-        while (transform.localScale != rescale)
-        {
-            yield return new WaitForSeconds(5f);
-            transform.localScale *= 1.2f;
-            if (transform.localScale == rescale)
-            {
-                Destroy(this.gameObject);
-            }
+        transform.localScale += rescale;
+        if (transform.localScale.x >= 2f)
+        {            
+            Destroy(this.gameObject);
         }
-        StopCoroutine(Rescale());
     }
 }
