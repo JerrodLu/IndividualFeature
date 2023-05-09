@@ -152,11 +152,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c6865121616e2e4dad1adc29fdde144, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
   activated: 0
   player: {fileID: 696699763}
   PhaseCast: {fileID: 512539119965358623, guid: 096f167bf4ed2f04fa4130ce519ab70b, type: 3}
   phaseSphere: {fileID: 1317041524564636993, guid: 454e0a6ae8757ae428a885e51c322d30, type: 3}
+  phaseGrasp: {fileID: 4116124309723781877, guid: ee2310b0f905eb74c89d1711214de15d, type: 3}
   offset: {x: 0.3, y: 0.5, z: 1}
 --- !u!4 &14527836
 Transform:

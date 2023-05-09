@@ -16,6 +16,8 @@ public class ActionSkillsBase : MonoBehaviour
     [SerializeField]
     private GameObject phaseSphere;
     [SerializeField]
+    private GameObject phaseGrasp;
+    [SerializeField]
     private Vector3 offset;
 
     private void Start()
@@ -36,6 +38,18 @@ public class ActionSkillsBase : MonoBehaviour
         {
             GameObject phaseCast = Instantiate(PhaseCast);
             phaseCast.name = "Phase";
+            activated = true;
+            tempCD = true;
+            Invoke("EndCD", 3f);
+        }
+    }
+
+    public void PhasegraspActive()
+    {
+        if (activated == false && tempCD == false)
+        {
+            GameObject phasegrasp = Instantiate(phaseGrasp);
+            phaseGrasp.name = "Grasp";
             activated = true;
             tempCD = true;
             Invoke("EndCD", 3f);

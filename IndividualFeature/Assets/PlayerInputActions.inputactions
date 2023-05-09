@@ -40,6 +40,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "ActionSkillPhasegrasp",
+                    "type": "Button",
+                    "id": "ec0fd5f7-8f78-46e1-8a65-c16bf4633fe2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -150,6 +159,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "ActionSkillPhasecast",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "10b38ab7-ef25-41fb-ad99-233d638d5a19",
+                    "path": "<Keyboard>/r",
+                    "interactions": "Tap",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ActionSkillPhasegrasp",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

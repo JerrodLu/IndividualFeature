@@ -62,6 +62,15 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ActionSkillPhasegrasp"",
+                    ""type"": ""Button"",
+                    ""id"": ""ec0fd5f7-8f78-46e1-8a65-c16bf4633fe2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -174,6 +183,17 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""action"": ""ActionSkillPhasecast"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""10b38ab7-ef25-41fb-ad99-233d638d5a19"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": ""Tap"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ActionSkillPhasegrasp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -186,6 +206,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         m_Player_FireBullet = m_Player.FindAction("FireBullet", throwIfNotFound: true);
         m_Player_MouseRotate = m_Player.FindAction("MouseRotate", throwIfNotFound: true);
         m_Player_ActionSkillPhasecast = m_Player.FindAction("ActionSkillPhasecast", throwIfNotFound: true);
+        m_Player_ActionSkillPhasegrasp = m_Player.FindAction("ActionSkillPhasegrasp", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -249,6 +270,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_FireBullet;
     private readonly InputAction m_Player_MouseRotate;
     private readonly InputAction m_Player_ActionSkillPhasecast;
+    private readonly InputAction m_Player_ActionSkillPhasegrasp;
     public struct PlayerActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -257,6 +279,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         public InputAction @FireBullet => m_Wrapper.m_Player_FireBullet;
         public InputAction @MouseRotate => m_Wrapper.m_Player_MouseRotate;
         public InputAction @ActionSkillPhasecast => m_Wrapper.m_Player_ActionSkillPhasecast;
+        public InputAction @ActionSkillPhasegrasp => m_Wrapper.m_Player_ActionSkillPhasegrasp;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -278,6 +301,9 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @ActionSkillPhasecast.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnActionSkillPhasecast;
                 @ActionSkillPhasecast.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnActionSkillPhasecast;
                 @ActionSkillPhasecast.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnActionSkillPhasecast;
+                @ActionSkillPhasegrasp.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnActionSkillPhasegrasp;
+                @ActionSkillPhasegrasp.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnActionSkillPhasegrasp;
+                @ActionSkillPhasegrasp.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnActionSkillPhasegrasp;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -294,6 +320,9 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @ActionSkillPhasecast.started += instance.OnActionSkillPhasecast;
                 @ActionSkillPhasecast.performed += instance.OnActionSkillPhasecast;
                 @ActionSkillPhasecast.canceled += instance.OnActionSkillPhasecast;
+                @ActionSkillPhasegrasp.started += instance.OnActionSkillPhasegrasp;
+                @ActionSkillPhasegrasp.performed += instance.OnActionSkillPhasegrasp;
+                @ActionSkillPhasegrasp.canceled += instance.OnActionSkillPhasegrasp;
             }
         }
     }
@@ -304,5 +333,6 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         void OnFireBullet(InputAction.CallbackContext context);
         void OnMouseRotate(InputAction.CallbackContext context);
         void OnActionSkillPhasecast(InputAction.CallbackContext context);
+        void OnActionSkillPhasegrasp(InputAction.CallbackContext context);
     }
 }

@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
         playerInputActions.Enable();
 
         playerInputActions.Player.ActionSkillPhasecast.performed += _ => PhasecastActive();
+        playerInputActions.Player.ActionSkillPhasegrasp.performed += _ => PhasegraspActive();
     }
 
     private void FixedUpdate()
@@ -32,5 +33,10 @@ public class Player : MonoBehaviour
     public void PhasecastActive()
     {
         actionSkillsBase.PhasecastActive();
+    }
+
+    public void PhasegraspActive()
+    {
+        actionSkillsBase.PhasegraspActive();
     }
 }
